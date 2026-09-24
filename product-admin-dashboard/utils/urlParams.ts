@@ -23,11 +23,6 @@ export const DEFAULT_QUERY_STATE: ProductsQueryState = {
   order: "asc",
 };
 
-/**
- * Reads the products list state out of the URL's query string, falling
- * back to sensible defaults for anything missing or invalid. This is the
- * one place that needs to worry about junk like ?page=abc or ?page=-1.
- */
 export function parseProductsParams(searchParams: URLSearchParams): ProductsQueryState {
   const rawPage = Number(searchParams.get("page"));
   const page = Number.isInteger(rawPage) && rawPage > 0 ? rawPage : DEFAULT_QUERY_STATE.page;
@@ -50,7 +45,6 @@ export function parseProductsParams(searchParams: URLSearchParams): ProductsQuer
   return { page, pageSize, search, category, sortBy, order };
 }
 
-/** Turns state back into a query string, omitting anything at its default. */
 export function buildProductsQueryString(state: ProductsQueryState): string {
   const params = new URLSearchParams();
   params.set("page", String(state.page));

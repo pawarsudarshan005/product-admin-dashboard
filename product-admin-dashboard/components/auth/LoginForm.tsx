@@ -16,9 +16,6 @@ export default function LoginForm() {
   async function handleSubmit(e: FormEvent) {
     e.preventDefault();
 
-    // Guards against the "click Login many times fast" case: once a
-    // request is already in flight, further submits are ignored. The
-    // submit button is also disabled below for the same reason.
     if (isSubmitting) return;
 
     if (!username.trim() || !password.trim()) {

@@ -5,7 +5,6 @@ interface Props {
   readonly onDismiss: () => void;
 }
 
-/** Small success banner shown after add/edit/delete actions. */
 export default function Banner({ message, onDismiss }: Props) {
   return (
     <div className="flex items-center gap-2 rounded-lg border border-green-200 bg-green-50 px-4 py-2.5 text-sm text-green-800">

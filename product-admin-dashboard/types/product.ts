@@ -33,8 +33,6 @@ export interface Category {
   name: string;
 }
 
-// Fields the Add/Edit form collects. A subset of Product because rating,
-// reviews, images etc. are either optional or not sensible to hand-type.
 export interface ProductFormValues {
   title: string;
   description: string;
