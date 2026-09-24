@@ -155,24 +155,24 @@ export default function ProductsPageContent() {
   }
 
   return (
-    <div className="mx-auto max-w-6xl px-4 py-6 sm:px-6 lg:px-8">
-      <div className="mb-5 flex items-center justify-between">
-        <h1 className="text-xl font-semibold text-slate-900">Products</h1>
-        <Link
-          href="/products/new"
-          className="inline-flex items-center gap-1.5 rounded-lg bg-indigo-600 px-3.5 py-2 text-sm font-medium text-white hover:bg-indigo-700"
-        >
-          <Plus size={15} /> Add Product
-        </Link>
-      </div>
-
-      {banner && (
-        <div className="mb-4">
-          <Banner message={banner} onDismiss={() => setBanner(null)} />
+    <div className="mx-auto max-w-6xl px-4 pb-6 sm:px-6 lg:px-8">
+      <div className="sticky top-0 z-10 bg-slate-50 pb-4 pt-6">
+        <div className="mb-5 flex items-center justify-between">
+          <h1 className="text-xl font-semibold text-slate-900">Products</h1>
+          <Link
+            href="/products/new"
+            className="inline-flex items-center gap-1.5 rounded-lg bg-indigo-600 px-3.5 py-2 text-sm font-medium text-white hover:bg-indigo-700"
+          >
+            <Plus size={15} /> Add Product
+          </Link>
         </div>
-      )}
 
-      <div className="mb-4">
+        {banner && (
+          <div className="mb-4">
+            <Banner message={banner} onDismiss={() => setBanner(null)} />
+          </div>
+        )}
+
         <ProductFilters
           searchInput={searchInput}
           onSearchInputChange={setSearchInput}
