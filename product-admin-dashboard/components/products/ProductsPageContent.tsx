@@ -13,6 +13,7 @@ import {
   searchProducts,
 } from "@/services/productService";
 import { applyLocalOverlay, getLocallyCreatedProducts, saveDeletedProductId } from "@/lib/localProducts";
+import { popFlashMessage } from "@/lib/flashMessage";
 import type { Category, Product } from "@/types/product";
 import { buildProductsQueryString, parseProductsParams, type PageSize, type ProductsQueryState, type SortField } from "@/utils/urlParams";
 import { useDebounce } from "@/hooks/useDebounce";
@@ -54,6 +55,9 @@ export default function ProductsPageContent() {
     getCategories()
       .then(setCategories)
       .catch(() => setCategories([]));
+
+    const flash = popFlashMessage();
+    if (flash) setBanner(flash);
   }, []);
 
   useEffect(() => {
