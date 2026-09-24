@@ -147,15 +147,6 @@ Sorting is server-side — DummyJSON accepts `sortBy`/`order` on `/products`,
 `/products/search`, and `/products/category/:name` alike, so the same query params work
 regardless of which of the three endpoints is active.
 
-## AI usage
-
-This project was built with AI assistance (Claude). AI was used to scaffold the file
-structure, write the Axios/service layer, the URL-state and race-condition handling, and
-the UI components, based on this assignment's requirements. Every file was reviewed
-afterward; the "Implementation notes" above describe the reasoning behind the trickier
-parts (race conditions, the search/category conflict, and the non-persistent CRUD) so
-they can be walked through and modified live.
-
 ## Future improvements
 
 - Real reviews CRUD (DummyJSON doesn't expose a reviews-write endpoint)
