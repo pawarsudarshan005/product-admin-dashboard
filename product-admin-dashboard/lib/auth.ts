@@ -1,8 +1,5 @@
 import type { AuthUser } from "@/types/auth";
 
-// Simple localStorage-based auth storage. This is NOT production-grade
-// security (a real app would use httpOnly cookies), but it is enough for
-// this assignment: it lets us attach a token to requests and gate routes.
 const TOKEN_KEY = "pad_token";
 const USER_KEY = "pad_user";
 

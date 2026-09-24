@@ -6,13 +6,9 @@ export interface ProductQueryParams {
   skip: number;
   sortBy?: "title" | "price" | "rating";
   order?: "asc" | "desc";
-  /** Lets callers cancel an in-flight request (used for search race conditions). */
   signal?: AbortSignal;
 }
 
-// DummyJSON accepts the same sortBy/order query params on /products,
-// /products/search and /products/category/{name}, so this helper is
-// shared by all three service functions below.
 function sortParams(params: ProductQueryParams) {
   return params.sortBy ? { sortBy: params.sortBy, order: params.order ?? "asc" } : {};
 }
